@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  windows-emulation:
+    image: scottyhardy/docker-wine:latest
+    container_name: windows_wine
+    environment:
+      - WEBRTC_PORT=8080
+      - RDP_SERVER=true
+    volumes:
+      - wine-data:/home/wine
+    restart: always
+
+volumes:
+  wine-data:
